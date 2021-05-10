@@ -48,7 +48,7 @@ function check () {
         }
     }
 
-    if (playerCounter === 9) {
+    if (playerCounter === 9 && gameState) {
         gameState = false;
         document.getElementById('meta').innerText = 'The game is Tied';
     }
