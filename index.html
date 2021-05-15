@@ -8,51 +8,77 @@
                 height: 100px;
                 width : 100px;
             }
+            body {
+                background-image: url("background.png");
+            }
         </style>
     </head>
     <body>
         <script src = "main.js"></script>
-        <table>
+            <h1 id = "X">
+                Score of player X = 0
+            </h1>
+            <h1 id = O>
+                Score of player O = 0
+            </h1>
+            <h1 id = "meta">
+                Turn of player x
+            </h1>
+            <table>
             <tr>
-                <td colspan = 3>
-                    <h1 id = "meta">
-                        Turn of player x
-                    </h1>
+                <td>
+                    <button onclick = "move(1)" id = "1">
+                        -
+                    </button>
+                </td>
+                <td>
+                    <button onclick = "move(2)" id = "2">
+                        -
+                    </button>
+                </td>
+                <td>
+                    <button onclick = "move(3)" id = "3">
+                        -
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button onclick = "move(1)" id = "1"></button>
+                    <button onclick = "move(4)" id = "4">
+                        -
+                    </button>
                 </td>
                 <td>
-                    <button onclick = "move(2)" id = "2"></button>
+                    <button onclick = "move(5)" id = "5">
+                        -
+                    </button>
                 </td>
                 <td>
-                    <button onclick = "move(3)" id = "3"></button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button onclick = "move(4)" id = "4"></button>
-                </td>
-                <td>
-                    <button onclick = "move(5)" id = "5"></button>
-                </td>
-                <td>
-                    <button onclick = "move(6)" id = "6"></button>
+                    <button onclick = "move(6)" id = "6">
+                        -
+                    </button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button onclick = "move(7)" id = "7"></button>
+                    <button onclick = "move(7)" id = "7">
+                        -
+                    </button>
                 </td>
                 <td>
-                    <button onclick = "move(8)" id = "8"></button>
+                    <button onclick = "move(8)" id = "8">
+                        -
+                    </button>
                 </td>
                 <td>
-                    <button onclick = "move(9)" id = "9"></button>
+                    <button onclick = "move(9)" id = "9">
+                        -
+                    </button>
                 </td>
             </tr>
         </table>
+        <button onclick="refresh()">
+            REFRESH
+        </button>
     </body>
 </html>

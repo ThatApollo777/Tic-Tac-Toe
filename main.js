@@ -1,6 +1,6 @@
 let gameState = true;
 let playerCounter = 0;
-let winStates = [
+const winStates = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
@@ -27,23 +27,22 @@ function move (id) {
 
 function check () {
     playerCounter++;
-
-    if (playerCounter%2 === 0) {
-        document.getElementById('meta').innerText = 'Turn of player x';
-    } else {
-        document.getElementById('meta').innerText = 'Turn of player o';
-    }
+    turnCheck();
 
     for (let loop = 0; loop < 8; loop++) {
         if (document.getElementById(winStates[loop][0]).innerText === 'x' && document.getElementById(winStates[loop][1]).innerText === 'x' && document.getElementById(winStates[loop][2]).innerText === 'x')  {
             gameState = false;
             document.getElementById('meta').innerText = 'Winner is player x';
+            let x = parseInt(document.getElementById('X').innerText.slice(document.getElementById('X').innerText.length-1)) + 1;
+            document.getElementById('X').innerText = 'Score of player X = ' + x;
             break;
         } 
 
         if (document.getElementById(winStates[loop][0]).innerText === 'o' && document.getElementById(winStates[loop][1]).innerText === 'o' && document.getElementById(winStates[loop][2]).innerText === 'o')  {
             gameState = false;
             document.getElementById('meta').innerText = 'Winner is player o';
+            let o = parseInt(document.getElementById('O').innerText.slice(document.getElementById('O').innerText.length-1)) + 1;
+            document.getElementById('O').innerText = 'Score of player O = ' + o;
             break;
         }
     }
@@ -51,5 +50,22 @@ function check () {
     if (playerCounter === 9 && gameState) {
         gameState = false;
         document.getElementById('meta').innerText = 'The game is Tied';
+    }
+}
+
+function refresh() {
+    gameState = true;
+    playerCounter = 0;
+    turnCheck();
+    for (let loop = 1; loop < 10; loop++) {
+        document.getElementById(loop).innerText = '-';
+    }
+}
+
+function turnCheck() {
+    if (playerCounter%2 === 0) {
+        document.getElementById('meta').innerText = 'Turn of player x';
+    } else {
+        document.getElementById('meta').innerText = 'Turn of player o';
     }
 }
